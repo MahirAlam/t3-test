@@ -1,0 +1,41 @@
+/* Add @layer to Tailwind Base to prevent Preflight conflicts */
+@layer {
+  @tailwind base;
+}
+
+/* Tailwind components & utilities */
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animate-delay-0 {
+    animation-delay: 0s;
+  }
+  .animate-delay-75 {
+    animation-delay: 75ms;
+  }
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animate-delay-150 {
+    animation-delay: 150ms;
+  }
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animate-delay-250 {
+    animation-delay: 250ms;
+  }
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+  .animate-delay-700 {
+    animation-delay: 700ms;
+  }
+  .animate-delay-1000 {
+    animation-delay: 1000ms;
+  }
+}

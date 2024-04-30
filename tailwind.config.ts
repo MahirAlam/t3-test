@@ -1,14 +1,30 @@
-import { type Config } from "tailwindcss";
-import { fontFamily } from "tailwindcss/defaultTheme";
+import { type Config } from 'tailwindcss';
+
+import colors from './src/config/colors';
 
 export default {
-  content: ["./src/**/*.tsx"],
+  content: ['./src/**/*.tsx'],
   theme: {
+    colors,
     extend: {
-      fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
+      animation: {
+        'blink-fast': 'blink 1s linear infinite',
+      },
+      keyframes: {
+        blink: {
+          '50%': {
+            fill: 'transparent',
+          },
+        },
       },
     },
   },
-  plugins: [],
+  corePlugins: {
+    preflight: false,
+  },
+  darkMode: ['class', '[data-mantine-color-scheme="dark"]'],
+  daisyui: {
+    themes: [],
+  },
+  plugins: [require('daisyui')],
 } satisfies Config;

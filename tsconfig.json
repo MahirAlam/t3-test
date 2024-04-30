@@ -1,4 +1,5 @@
 {
+  "extends": "@vercel/style-guide/typescript/node20",
   "compilerOptions": {
     /* Base Options: */
     "esModuleInterop": true,
@@ -15,7 +16,7 @@
     "checkJs": true,
 
     /* Bundled projects */
-    "lib": ["dom", "dom.iterable", "ES2022"],
+    "lib": ["es5", "es6", "dom", "dom.iterable"],
     "noEmit": true,
     "module": "ESNext",
     "moduleResolution": "Bundler",
@@ -27,7 +28,10 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+
+    /* Others */
+    "forceConsistentCasingInFileNames": true
   },
   "include": [
     ".eslintrc.cjs",
@@ -36,7 +40,8 @@
     "**/*.tsx",
     "**/*.cjs",
     "**/*.js",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "next.config.mjs"
   ],
   "exclude": ["node_modules"]
 }
