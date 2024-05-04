@@ -19,10 +19,10 @@ export const animeDetails = createTable('anime-details', {
   status: animeStatusEnum('status'),
   format: animeFormatEnum('format'),
   season: animeSeasonEnum('season'),
-  currentEpisodes: integer('currentEpisodes'),
+  currentEpisode: integer('currentEpisodes'),
   countryOfOrigin: varchar('countryOfOrigin', { length: 32 }),
-  coverImg: varchar('coverImg', { length: 256 }),
-  bannerImg: varchar('bannerImg', { length: 256 }),
+  coverImage: varchar('coverImg', { length: 256 }),
+  bannerImage: varchar('bannerImg', { length: 256 }),
   genres: varchar('genres', { length: 100 }).array(),
   tags: varchar('genres', { length: 100 }).array(),
   description: varchar('description', { length: 1024 }).array(),
@@ -32,9 +32,10 @@ export const animeDetails = createTable('anime-details', {
   averageRating: integer('averageRating').default(-1),
   averagePopularity: integer('averagePopularity').default(-1),
   duration: integer('duration').default(-1),
-  year: integer('duration').default(-1),
+  year: integer('year').default(-1),
   characters: jsonb('characters').$type<AnimeCharacters>().array(),
   relations: jsonb('relations').$type<AnimeRelations>().array(),
-  relationMapping: jsonb('relationMapping').$type<AnimeRelations>().array(),
   sourceMapping: jsonb('sourceMapping').$type<AnimeSourceMapping>().array(),
 });
+
+export type AnimeDetails = typeof animeDetails.$inferSelect;
